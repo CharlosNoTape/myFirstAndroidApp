@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,7 +53,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void simple_click(View view) {
-        TextView t = (TextView) findViewById(R.id.textView);
-        t.setText("Goodbye!");
+        EditText e = (EditText)findViewById(R.id.editText);
+        TextView t = (TextView)findViewById(R.id.textView);
+        if(e.getText().toString().matches("")){
+            t.setText("Goodbye!");
+        }
+        else {
+            t.setText(e.getText().toString());
+        }
     }
 }
